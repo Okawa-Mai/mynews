@@ -6,12 +6,14 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\Models\News;
+use App\Models\History;
+use Carbon\Carbon;
 
 class NewsController extends Controller
 {
     public function add()
     {
-        return view('admin.news.create');
+        return view('admin.news.crete');
     }
 
     public function create(Request $request)
