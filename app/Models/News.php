@@ -16,6 +16,6 @@ class News extends Model
     ); 
     public function histories()
     {
-        return $this ->hasMAny('APP\Models\Mistory');
+        return $this->hasMany('App\Models\History');
     } 
 }  
