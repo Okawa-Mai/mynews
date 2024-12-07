@@ -17,6 +17,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+use App\Http\Controllers\Admin\AAAController;
+Route::controller(AAAController::class)->prefix('admin')->group(function() {
+    Route::get('XXX/XXX','bbb');
+});
+
+use App\Http\Controllers\Admin\profileController;
+Route::controller(profileController::class)->prefix('admin')->group(function(){
+    Route::get('admin/profile/edit', 'add');
+});
+
 use App\Http\Controllers\Admin\NewsController;
 Route::controller(NewsController::class)->prefix('admin')->name('admin.')->middleware('auth')->group(function () {
     Route::get('news/create', 'add')->name('news.add');
