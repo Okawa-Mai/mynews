@@ -27,7 +27,4 @@ class ProfileController extends Controller
     {
         return redirect('admin/profile/edit');
     }
-use App\Http\Controllers\Admin\NewsController;
-Route::controller(NewsController::class)->prefix('admin')->group(function(){
-    Route::get('news/create', 'add');
-});
+}
