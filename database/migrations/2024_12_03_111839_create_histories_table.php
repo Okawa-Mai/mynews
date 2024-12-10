@@ -15,6 +15,10 @@ return new class extends Migration
     {
         Schema::create('histories', function (Blueprint $table) {
             $table->id();
+            // 以下を追記
+            $table->bigInteger('news_id');
+            $table->string('edited_at');
+            // 追記ここまで            
             $table->timestamps();
         });
     }

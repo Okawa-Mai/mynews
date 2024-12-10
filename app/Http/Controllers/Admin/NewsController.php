@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 
 use App\Models\News;
 
+use App\Models\History;
+use Carbon\Carbon;
+
 class NewsController extends Controller
 {
     public function add()
@@ -100,6 +103,7 @@ class NewsController extends Controller
 
         return redirect('admin/news');
     }
+    // 以下を追記
     public function delete(Request $request)
     {
         // 該当するNews Modelを取得
@@ -110,5 +114,4 @@ class NewsController extends Controller
 
         return redirect('admin/news/');
     }
-    // 追記ここまで
 }
