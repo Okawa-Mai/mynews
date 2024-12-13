@@ -2,10 +2,10 @@ body {
     color: #000;
 }
 
-.heaader {
+.header { /* 修正: .heaader → .header */
     .logo {
-        width:120px;
-        height:82px;
+        width: 120px;
+        height: 82px;
     }
 }
 
@@ -13,45 +13,48 @@ body {
     .caption {
         position: relative;
         width: 350px;
-        .image {
-            img {
-                width:100px;
-            }
+
+        .image img {
+            width: 100px;
         }
+
         .title {
-            width:100%;
+            width: 100%;
             position: absolute;
             bottom: 0;
             left: 0;
-            background-color: rgba(0,0,0,0,6);
-            h1{
+            background-color: rgba(0, 0, 0, 0.6); /* 修正: rgba(0,0,0,0,6) → rgba(0, 0, 0, 0.6) */
+            
+            h1 {
                 color: #fff;
                 font-size: 1.2em;
             }
         }
-        .body{
+
+        .body {
             font-size: 0.8em;
         }
     }
 }
 
-.posts{
-    .post{
-        .date{
+.posts {
+    .post {
+        .date {
             font-size: 0.6em;
-            color: #999999;
+            color: #999; /* 修正: 6桁のカラーコードを短縮形に */
         }
-        .title{
+
+        .title {
             font-size: 1.2em;
-            font-weight: :bold;
+            font-weight: bold; /* 修正: 不要なコロンを削除 */
         }
-        .body{
-            font-size: :large0.8em;
+
+        .body {
+            font-size: 0.8em; /* 修正: :large0.8em → 0.8em */
         }
-        .image{
-            img{
-                width:250px;
-            }
+
+        .image img {
+            width: 250px;
         }
     }
 }
