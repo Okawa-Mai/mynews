@@ -25,7 +25,9 @@ Route::controller(AAAController::class)->prefix('admin')->group(function() {
 use App\Http\Controllers\Admin\ProfileController;
 Route::controller(ProfileController::class)->prefix('admin')->middleware('auth')->group(function(){
     Route::get('profile/create', 'add');
+    Route::post('profile/create', 'add');
     Route::get('profile/edit', 'edit');
+    Route::post('profile/edit', 'updte');
 });
 
 use App\Http\Controllers\Admin\NewsController;
