@@ -1,12 +1,12 @@
 @extends('layouts.admin')
-@section('title', 'My プロフィール')
+@section('title', 'Myプロフィール')
 
 @section('content')
     <div class="container">
         <div class="row">
             <div class="col-md-8 mx-auto">
                 <h2>プロフィール作成</h2>
-                <form action="{{ route('admin.news.create') }}" method="post" enctype="multipart/form-data">
+                <form action="{{ route('admin.profile.create') }}" method="post" enctype="multipart/form-data">
 
                     @if (count($errors) > 0)
                         <ul>
@@ -24,7 +24,7 @@
                     <div class="form-group row">
                         <label class="col-md-2">性別</label>
                         <div class="col-md-10">
-                            <input type="text" class="form-control" name="gender" value="{{ old('gender') }}">
+                            <textarea class="form-control" name="gender" rows="1">{{ old('gender') }}</textarea>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -34,9 +34,9 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <lavel class="col-md-2">自己紹介欄</label>
+                        <label class="col-md-2">自己紹介欄</label>
                         <div class="col-md-10">
-                            <textatea class="form-control" name="introduction" rows="10">{{old('hobby') }}</textarea>
+                            <textarea class="form-control" name="introduction" rows="10">{{old('introduction') }}</textarea>
                         </div>
                     </div>
                      @csrf

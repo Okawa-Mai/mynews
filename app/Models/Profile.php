@@ -11,9 +11,9 @@ class Profile extends Model
     protected $guarded = array('id');
 
     public static $rules = array(
-        'neme' => 'required',
+        'name' => 'required',
         'gender' => 'required',
         'hobby'=>'required',
-        'introduction'=>'rewuired',
+        'introduction'=>'required',
     );
 }
