@@ -8,6 +8,9 @@ use Illuminate\Http\Request;
 //以下の1行を追記することで、profile Modelが扱えるようになる
 use App\Models\Profile;
 
+//Histoy Model,Carbonクラスが扱えるようになる
+use App\Models\History;
+use Carbon\Carbon;
 
 class ProfileController extends Controller
 {
@@ -61,8 +64,8 @@ class ProfileController extends Controller
     {
         // Validationをかける
         $this->validate($request, Profile::$rules);
-        // News Modelからデータを取得する
-        $profile = profile::find($request->id);
+        // profile Modelからデータを取得する
+        $profile = Profile::find($request->id);
         // 送信されてきたフォームデータを格納する
         $profile_form = $request->all();
 
@@ -71,7 +74,12 @@ class ProfileController extends Controller
 
         // 該当するデータを上書きして保存する
         $profile->fill($profile_form)->save();
-
+        
+        $history = new History();
+        $history->profile_id = $profile->id;
+        $history->edited_at = Carbon::now();
+        $history-save();
+        
         return redirect('admin/profile');
     }
 }
